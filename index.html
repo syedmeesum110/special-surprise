@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday</title>
+  <!-- Google Fonts for elegant typography -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Gate Screen -->
+  <div id="gate" class="gate-screen">
+    <div class="gate-content">
+      <h2 class="gate-title">What name should I call you?</h2>
+      <input type="text" id="nameInput" class="gate-input" placeholder="Type name here..." />
+      
+      <h2 class="gate-title" style="margin-top: 15px;">What Is My Fav Food?</h2>
+      <input type="text" id="foodInput" class="gate-input" placeholder="Type food here..." />
+      
+      <button id="submitName" class="gate-btn">Enter</button>
+      <p id="gateError" class="gate-error">Decline</p>
+    </div>
+  </div>
+
+  <!-- Timer Screen -->
+  <div id="timerScreen" class="gate-screen" style="display: none;">
+    <div class="gate-content timer-content">
+      <h2 class="timer-title">Something is special For You But You See On 8 July 😌❤️</h2>
+      <div class="countdown">
+        <div class="time-box">
+          <span id="days">00</span>
+          <span class="time-label">Days</span>
+        </div>
+        <div class="time-box">
+          <span id="hours">00</span>
+          <span class="time-label">Hours</span>
+        </div>
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <span class="time-label">Minutes</span>
+        </div>
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <span class="time-label">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app">
+    <!-- Loading Screen -->
+    <div class="loader">
+      <h2 class="loader-text">Preparing something special...</h2>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Decorative background elements -->
+      <div class="bg-shape bg-shape-1"></div>
+      <div class="bg-shape bg-shape-2"></div>
+      <div class="floral floral-1">🌸</div>
+      <div class="floral floral-2">🌿</div>
+      <div class="floral floral-3">✨</div>
+      <div class="floral floral-4">🎂</div>
+
+      <div class="hero-container">
+        <div class="hero-text-side">
+          <h1 class="hero-main-title">HAPPY<br>BIRTHDAY<br>Senorita</h1>
+          <p class="hero-date">July 18 <span class="divider">|</span> 12 AM</p>
+          <p class="hero-desc">Wishing you a magnificent birthday surrounded by love, joy, and unforgettable moments. May this special day be as elegant and beautiful as you are.</p>
+          <a href="#galleryTitle"><button class="hero-btn">See Memories</button></a>
+        </div>
+        <div class="hero-image-side">
+          <div class="image-wrapper">
+            <img src="/hero_side_image.png" alt="Birthday Celebration" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Section -->
+    <section class="message-section">
+      <div class="message-container">
+        <p class="reveal-text">Wishing you a day filled with happiness</p>
+        <p class="reveal-text">and a year filled with joy.</p>
+        <p class="reveal-text">May all your dreams come true.</p>
+      </div>
+    </section>
+
+    <!-- Gallery / Memories Section with Slider -->
+    <section class="gallery">
+      <h2 class="gallery-title" id="galleryTitle">Moments to Remember</h2>
+      <!-- Swiper -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/luxury_birthday_cake_1778846425398.png" alt="Cake" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/luxury_champagne_glasses_1778846463553.png" alt="Champagne" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/luxury_gift_box_1778846483194.png" alt="Gift" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/gallery_balloons.png" alt="Balloons" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/gallery_setup.png" alt="Setup" />
+            </div>
+          </div>
+
+          <!-- Duplicated for perfect infinite loop on large screens -->
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/luxury_birthday_cake_1778846425398.png" alt="Cake" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/luxury_champagne_glasses_1778846463553.png" alt="Champagne" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/luxury_gift_box_1778846483194.png" alt="Gift" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/gallery_balloons.png" alt="Balloons" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/gallery_setup.png" alt="Setup" />
+            </div>
+          </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- Book / Wishes Section -->
+    <section class="book-section">
+      <div class="book-wrapper" id="multiPageBook">
+
+        <!-- Page 3 (Back page, static) -->
+        <div class="book-page page-3">
+          <div class="page-front inside-page">
+            <h3 class="page-title">Forever & Always</h3>
+            <p class="page-text">Thank you for being you. Have an amazing year ahead filled with blessings! 💖</p>
+          </div>
+        </div>
+
+        <!-- Page 2 (Middle Flippable Page) -->
+        <div class="book-page page-2" id="page2">
+          <div class="page-front inside-page">
+            <h3 class="page-title">More Joy</h3>
+            <p class="page-text">Wishing you all the joy and happiness your heart can hold. Every moment with you is a
+              treasure. ✨</p>
+            <span class="tap-hint">Tap to flip &raquo;</span>
+          </div>
+          <div class="page-back inside-page">
+            <h3 class="page-title">A New Chapter</h3>
+            <p class="page-text">May this year bring you closer to your dreams and fill your life with success.</p>
+          </div>
+        </div>
+
+        <!-- Page 1 (Cover, Flippable) -->
+        <div class="book-page page-1" id="page1">
+          <div class="page-front cover-front">
+            <h3>Tap to Open</h3>
+            <p style="margin-top: 10px; font-family: var(--font-body); letter-spacing: 2px;">A Special Note</p>
+          </div>
+          <div class="page-back inside-page">
+            <h3 class="page-title">My Wishes</h3>
+            <p class="page-text">Happy Birthday! May your day be as beautiful as your smile. 🎂</p>
+            <span class="tap-hint" style="left: 20px; right: auto;">&laquo; Tap to close</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Memories Prompt Section -->
+    <section class="memories-prompt-section" style="padding: 120px 20px; background-color: var(--bg-secondary); text-align: center; border-top: 1px solid rgba(217, 108, 108, 0.2);">
+      <h2 style="font-family: var(--font-heading); font-size: 3rem; color: var(--hero-blue); margin-bottom: 40px;">Want to see our Older Memories?</h2>
+      <div class="memory-buttons" style="display: flex; gap: 30px; justify-content: center;">
+        <button id="memoriesYesBtn" class="luxury-btn" style="min-width: 150px;">Yes</button>
+        <button id="memoriesNoBtn" class="luxury-btn" style="min-width: 150px;">No</button>
+      </div>
+    </section>
+
+    <!-- Final Toast Section -->
+    <section class="toast-section">
+      <div class="toast-content">
+        <h2 class="final-wish">Here's to another beautiful year!</h2>
+        <button id="celebrateBtn" class="luxury-btn">Celebrate Now</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
