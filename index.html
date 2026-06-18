@@ -5,19 +5,42 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday</title>
-  <!-- Google Fonts for elegant typography -->
-  <link rel="stylesheet" href="style.css">
+  <title>Happy Birthday · Senorita</title>
+  <meta name="description" content="A little birthday surprise, made with love. 💗" />
+  <meta property="og:title" content="Happy Birthday, Senorita 💖" />
+  <meta property="og:description" content="A little something made just for you — open it. 🎂" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <!-- For a photo in the link preview, add og:image with an ABSOLUTE url once deployed, e.g.
+       <meta property="og:image" content="https://your-site/og-cover.jpg" /> -->
+  <meta name="theme-color" content="#170b13" />
+  <!-- Google Fonts — distinctive editorial pairing -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Imperial+Script&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
+  <!-- Atmospheric backdrop layers -->
+  <div class="atmosphere"></div>
+  <div class="grain"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="/music/happy-birthday.ogg" type="audio/ogg" />
+  </audio>
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music" title="Happy Birthday 🎶">
+    <span class="eq"><i></i><i></i><i></i><i></i></span>
+  </button>
+
   <!-- Custom Cursor -->
   <div class="cursor-dot"></div>
   <div class="cursor-outline"></div>
@@ -39,7 +62,7 @@
   <!-- Timer Screen -->
   <div id="timerScreen" class="gate-screen" style="display: none;">
     <div class="gate-content timer-content">
-      <h2 class="timer-title">Something is special For You But You See On 8 July 😌❤️</h2>
+      <h2 class="timer-title">Something special is waiting for you… it unlocks on your big day 😌❤️</h2>
       <div class="countdown">
         <div class="time-box">
           <span id="days">00</span>
@@ -79,14 +102,16 @@
 
       <div class="hero-container">
         <div class="hero-text-side">
-          <h1 class="hero-main-title">HAPPY<br>BIRTHDAY<br>Senorita</h1>
-          <p class="hero-date">July 18 <span class="divider">|</span> 12 AM</p>
+          <span class="hero-eyebrow">A Celebration Of You</span>
+          <h1 class="hero-main-title">Happy<br>Birthday<br><span class="name-script">Senorita</span></h1>
+          <p class="hero-date">July 18 <span class="divider">·</span> 12 AM</p>
           <p class="hero-desc">Wishing you a magnificent birthday surrounded by love, joy, and unforgettable moments. May this special day be as elegant and beautiful as you are.</p>
           <a href="#galleryTitle"><button class="hero-btn">See Memories</button></a>
         </div>
         <div class="hero-image-side">
           <div class="image-wrapper">
-            <img src="/hero_side_image.png" alt="Birthday Celebration" />
+            <img src="/memories/5.jpg" alt="My Lovely Birthday Girl" />
+            <span class="image-caption">My Lovely Birthday Girl</span>
           </div>
         </div>
       </div>
@@ -103,60 +128,71 @@
 
     <!-- Gallery / Memories Section with Slider -->
     <section class="gallery">
+      <span class="section-eyebrow">The Gallery</span>
       <h2 class="gallery-title" id="galleryTitle">Moments to Remember</h2>
       <!-- Swiper -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/luxury_birthday_cake_1778846425398.png" alt="Cake" />
+              <img src="/memories/1.jpg" alt="You are so Beautiful" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/luxury_champagne_glasses_1778846463553.png" alt="Champagne" />
+              <img src="/memories/2.jpg" alt="You are So Cute" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/luxury_gift_box_1778846483194.png" alt="Gift" />
+              <img src="/memories/3.jpg" alt="I feel so lucky to be with you" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/gallery_balloons.png" alt="Balloons" />
+              <img src="/memories/4.jpg" alt="Your eyes are so beautiful" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/gallery_setup.png" alt="Setup" />
+              <img src="/memories/6.jpg" alt="You are amazing" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/memories/5.jpg" alt="You are My Senorita" />
             </div>
           </div>
 
-          <!-- Duplicated for perfect infinite loop on large screens -->
+          <!-- Duplicated for a smooth infinite loop -->
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/luxury_birthday_cake_1778846425398.png" alt="Cake" />
+              <img src="/memories/1.jpg" alt="You are so Beautiful" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/luxury_champagne_glasses_1778846463553.png" alt="Champagne" />
+              <img src="/memories/2.jpg" alt="You are So Cute" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/luxury_gift_box_1778846483194.png" alt="Gift" />
+              <img src="/memories/3.jpg" alt="I feel so lucky to be with you" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/gallery_balloons.png" alt="Balloons" />
+              <img src="/memories/4.jpg" alt="Your eyes are so beautiful" />
             </div>
           </div>
           <div class="swiper-slide">
             <div class="gallery-item">
-              <img src="/gallery_setup.png" alt="Setup" />
+              <img src="/memories/6.jpg" alt="You are amazing" />
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="gallery-item">
+              <img src="/memories/5.jpg" alt="You are My Senorita" />
             </div>
           </div>
         </div>
@@ -172,35 +208,38 @@
     <section class="book-section">
       <div class="book-wrapper" id="multiPageBook">
 
-        <!-- Page 3 (Back page, static) -->
-        <div class="book-page page-3">
-          <div class="page-front inside-page">
-            <h3 class="page-title">Forever & Always</h3>
+        <!-- Static base spread (revealed underneath the flipping leaves) -->
+        <div class="leaf base base-left">
+          <div class="face cover-back"></div>
+        </div>
+        <div class="leaf base base-right">
+          <div class="face inside-page">
+            <h3 class="page-title">Forever &amp; Always</h3>
             <p class="page-text">Thank you for being you. Have an amazing year ahead filled with blessings! 💖</p>
           </div>
         </div>
 
-        <!-- Page 2 (Middle Flippable Page) -->
-        <div class="book-page page-2" id="page2">
-          <div class="page-front inside-page">
+        <!-- Leaf 2 (middle, flippable) -->
+        <div class="leaf flip-leaf leaf-2" id="leaf2">
+          <div class="face front inside-page">
             <h3 class="page-title">More Joy</h3>
             <p class="page-text">Wishing you all the joy and happiness your heart can hold. Every moment with you is a
               treasure. ✨</p>
             <span class="tap-hint">Tap to flip &raquo;</span>
           </div>
-          <div class="page-back inside-page">
+          <div class="face back inside-page">
             <h3 class="page-title">A New Chapter</h3>
             <p class="page-text">May this year bring you closer to your dreams and fill your life with success.</p>
           </div>
         </div>
 
-        <!-- Page 1 (Cover, Flippable) -->
-        <div class="book-page page-1" id="page1">
-          <div class="page-front cover-front">
+        <!-- Leaf 1 (cover, flippable) -->
+        <div class="leaf flip-leaf leaf-1" id="leaf1">
+          <div class="face front cover-front">
             <h3>Tap to Open</h3>
             <p style="margin-top: 10px; font-family: var(--font-body); letter-spacing: 2px;">A Special Note</p>
           </div>
-          <div class="page-back inside-page">
+          <div class="face back inside-page">
             <h3 class="page-title">My Wishes</h3>
             <p class="page-text">Happy Birthday! May your day be as beautiful as your smile. 🎂</p>
             <span class="tap-hint" style="left: 20px; right: auto;">&laquo; Tap to close</span>
@@ -211,11 +250,12 @@
     </section>
 
     <!-- Memories Prompt Section -->
-    <section class="memories-prompt-section" style="padding: 120px 20px; background-color: var(--bg-secondary); text-align: center; border-top: 1px solid rgba(217, 108, 108, 0.2);">
-      <h2 style="font-family: var(--font-heading); font-size: 3rem; color: var(--hero-blue); margin-bottom: 40px;">Want to see our Older Memories?</h2>
-      <div class="memory-buttons" style="display: flex; gap: 30px; justify-content: center;">
-        <button id="memoriesYesBtn" class="luxury-btn" style="min-width: 150px;">Yes</button>
-        <button id="memoriesNoBtn" class="luxury-btn" style="min-width: 150px;">No</button>
+    <section class="memories-prompt-section">
+      <span class="section-eyebrow">Down Memory Lane</span>
+      <h2 class="memories-title">Want to see our<br><em>older memories?</em></h2>
+      <div class="memory-buttons">
+        <button id="memoriesYesBtn" class="luxury-btn">Yes, let's</button>
+        <button id="memoriesNoBtn" class="luxury-btn">Maybe not</button>
       </div>
     </section>
 
@@ -226,6 +266,68 @@
         <button id="celebrateBtn" class="luxury-btn">Celebrate Now</button>
       </div>
     </section>
+  </div>
+
+  <!-- ===================== Cake Celebration Overlay ===================== -->
+  <div id="celebrationOverlay" class="celebration-overlay">
+    <button class="celebration-close" id="celebrationClose" aria-label="Close">&times;</button>
+
+    <div class="celebration-inner">
+      <span class="section-eyebrow">Your Moment</span>
+      <h2 class="celebration-title">Make a wish,<br><span class="foil">Senorita</span></h2>
+
+      <!-- The Cake -->
+      <div class="cake-stage" id="cakeStage">
+        <div class="cake" id="cake">
+          <!-- Candles -->
+          <div class="candles">
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+            <div class="candle"><span class="flame"></span><span class="smoke"></span></div>
+          </div>
+
+          <!-- Cake body -->
+          <div class="cake-body">
+            <div class="tier tier-top"></div>
+            <div class="tier tier-mid"></div>
+            <div class="tier tier-base"></div>
+            <!-- the cut + the inner cross-section it reveals -->
+            <div class="cut-line"></div>
+            <div class="cut-gap"></div>
+          </div>
+
+          <!-- the slice that gets cut out and lands on the plate -->
+          <div class="cake-slice"></div>
+
+          <div class="plate"></div>
+          <div class="knife" id="knife">🔪</div>
+        </div>
+        <p class="cake-hint" id="cakeHint">Tap the cake to cut it 🎂</p>
+      </div>
+
+      <h3 class="celebration-message" id="celebrationMessage">Happy Birthday! 🎉</h3>
+
+      <!-- Romance surprise scene (revealed after the cake is cut) -->
+      <div class="romance-stage" id="romanceStage">
+        <div class="love-letter" id="loveLetter">💌</div>
+        <div class="letter-open" id="letterOpen">
+          <div class="letter-photo"><img src="/memories/5.jpg" alt="Senorita" /></div>
+          <p class="romance-line">For my forever favourite —<br>happy birthday, my love. 💗</p>
+        </div>
+        <div class="couple" id="couple">
+          <span class="person boy" id="boy"></span>
+          <span class="rose" id="rose">🌹</span>
+          <span class="kiss" id="kissMark">💋</span>
+          <span class="person girl" id="girl"></span>
+        </div>
+      </div>
+
+      <div class="celebration-actions">
+        <button class="luxury-btn" id="cutCakeBtn">Cut the Cake</button>
+        <button class="luxury-btn celebration-replay" id="surpriseBtn">Open your surprise 💌</button>
+        <button class="luxury-btn celebration-replay" id="romanceReplayBtn">Again 💞</button>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

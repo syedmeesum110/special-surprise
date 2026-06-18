@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memories · Senorita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Imperial+Script&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Atmospheric backdrop layers -->
+  <div class="atmosphere"></div>
+  <div class="grain"></div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="/music/happy-birthday.ogg" type="audio/ogg" />
+  </audio>
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle music" title="Happy Birthday 🎶">
+    <span class="eq"><i></i><i></i><i></i><i></i></span>
+  </button>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <!-- Back to home -->
+  <a href="index.html" class="mem-back" aria-label="Back home">&larr; <span>Back</span></a>
+
+  <!-- Hero -->
+  <header class="mem-hero">
+    <span class="hero-eyebrow">Down Memory Lane</span>
+    <h1 class="mem-hero-title">A Few Of Our<br><span class="name-script">Moments</span></h1>
+    <p class="mem-hero-sub">Every picture here is a tiny window back into a day I never want to forget — a laugh
+      we shared, a place we went, a quiet moment where it was just the two of us against the whole world. Some of
+      these made me smile the second the camera clicked; others mean even more now, looking back. Together they tell
+      a little story of us — of how ordinary days turned into my favourite memories simply because you were in them.
+      So take your time, scroll slowly, and relive each one with me. Here's to all the moments we've already made, and
+      to the countless beautiful ones still waiting for us. 💗</p>
+    <span class="mem-scroll-cue">scroll <span class="cue-line"></span></span>
+  </header>
+
+  <!-- Gallery (rendered by memories.js) -->
+  <main class="mem-gallery" id="memGallery"></main>
+
+  <!-- Closing -->
+  <section class="mem-closing">
+    <span class="section-eyebrow">And many more to come</span>
+    <h2 class="mem-closing-title">Here's to <span class="foil">forever</span>, Senorita.</h2>
+    <a href="index.html" class="luxury-btn">Back to your day &#10084;</a>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="mem-lightbox" id="memLightbox">
+    <button class="mem-lightbox-close" id="memLightboxClose" aria-label="Close">&times;</button>
+    <figure class="mem-lightbox-fig">
+      <img id="memLightboxImg" src="" alt="" />
+      <figcaption id="memLightboxCap"></figcaption>
+    </figure>
+  </div>
+
+  <script type="module" src="/memories.js"></script>
+</body>
+
+</html>
