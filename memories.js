@@ -125,25 +125,32 @@ if (cursorDot && cursorOutline) {
 /* ---- Background music (continues the mood from the main page) ---- */
 const bgMusic = document.getElementById('bgMusic')
 const musicToggle = document.getElementById('musicToggle')
+
 if (bgMusic) bgMusic.volume = 0.45
 
-function tryPlayMusic() {
+function playMusic() {
   if (!bgMusic) return
   bgMusic.play()
     .then(() => musicToggle && musicToggle.classList.add('playing'))
     .catch(() => {/* blocked until a gesture — handled below */ })
 }
+
 if (bgMusic) {
-  tryPlayMusic() // attempt immediately (often allowed after interacting with the site)
+  playMusic() // attempt immediately (often allowed after interacting with the site)
   // Fallback: start on the first interaction if the browser blocked autoplay
-  const startOnce = () => { if (bgMusic.paused) tryPlayMusic(); window.removeEventListener('pointerdown', startOnce) }
+  const startOnce = () => { if (bgMusic.paused) playMusic(); window.removeEventListener('pointerdown', startOnce) }
   window.addEventListener('pointerdown', startOnce)
 }
+
 if (musicToggle && bgMusic) {
   musicToggle.addEventListener('click', (e) => {
     e.stopPropagation()
-    if (bgMusic.paused) { bgMusic.play().then(() => musicToggle.classList.add('playing')).catch(() => {}) }
-    else { bgMusic.pause(); musicToggle.classList.remove('playing') }
+    if (bgMusic.paused) {
+      bgMusic.play().then(() => musicToggle.classList.add('playing')).catch(() => {})
+    } else {
+      bgMusic.pause()
+      musicToggle.classList.remove('playing')
+    }
   })
 }
 

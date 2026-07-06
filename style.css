@@ -1428,22 +1428,58 @@ body {
 /* =====================================================================
    Music toggle
    ===================================================================== */
-.music-toggle {
+/* Music Toggle */
+.music-controls {
   position: fixed;
-  bottom: 26px; right: 26px;
-  z-index: 10003;
-  width: 54px; height: 54px;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 100003;
+}
+
+.music-toggle {
+  position: relative;
+  bottom: auto;
+  right: auto;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 1px solid rgba(231, 199, 140, 0.4);
-  background: rgba(23, 11, 19, 0.55);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  background: rgba(23, 11, 19, 0.65);
+  border: 1px solid rgba(246, 227, 182, 0.2);
+  backdrop-filter: blur(12px);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.song-toggle-btn {
+  background: rgba(23, 11, 19, 0.75);
+  color: var(--color-champagne);
+  border: 1px solid rgba(246, 227, 182, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.song-toggle-btn:hover {
+  background: var(--color-champagne);
+  color: var(--color-dark-bg);
+  border-color: var(--color-champagne);
+  transform: translateY(-2px);
+}
+
 .music-toggle:hover {
   transform: scale(1.08);
   border-color: var(--gold);

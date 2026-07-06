@@ -9,6 +9,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 // --- Background Music ---
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
+
 if (bgMusic) bgMusic.volume = 0.45;
 
 function playMusic() {
@@ -67,8 +68,8 @@ const gateError = document.getElementById('gateError');
 document.body.style.overflow = 'hidden';
 
 const timerScreen = document.getElementById('timerScreen');
-// Unlocks at 11:59 PM on 7 July (Pakistan Standard Time, UTC+5) — right before her birthday on 8 July.
-const targetDate = new Date("2026-07-07T23:59:00+05:00").getTime();
+// Unlocks at 12:00 AM on 8 July (Pakistan Standard Time, UTC+5) — right on her birthday.
+const targetDate = new Date("2026-07-08T00:00:00+05:00").getTime();
 let timerInterval;
 
 function startTimer() {
@@ -201,6 +202,12 @@ if (localStorage.getItem('birthdayGatePassed') === '1') {
   } else {
     // Still counting down to 11:59 PM on 7 July
     startTimer();
+    // Allow user to manually start/change music during countdown if they click music buttons
+    const startMusicOnce = () => {
+      if (bgMusic && bgMusic.paused) playMusic();
+      window.removeEventListener('pointerdown', startMusicOnce);
+    };
+    window.addEventListener('pointerdown', startMusicOnce);
   }
 }
 
